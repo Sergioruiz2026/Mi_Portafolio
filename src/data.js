@@ -3,7 +3,7 @@ export const persona = {
   titular: "Programo aplicaciones para cuidar a las personas y proteger sus datos.",
   resumen:
     "Soy estudiante de Ingeniería en Informática en INACAP. Antes de programar pasé 13 años liderando tiendas; hoy construyo aplicaciones en Python y JavaScript, con seguridad y pruebas desde el inicio.",
-  correo: "ruiz.2006@hotmail.com",
+  correo: "sergio.ruiz.espinoza2026@gmail.com",
   telefono: "+56 9 9713 1557",
   telefonoLink: "tel:+56997131557",
   ubicacion: "Quilpué, Región de Valparaíso, Chile",
