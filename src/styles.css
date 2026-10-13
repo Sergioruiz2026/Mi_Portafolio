@@ -7,6 +7,10 @@
   --line: #D5DEE8;
   --signal: #E8B100;
   --button-ink: #0F1E24;
+  --soft-turquoise: rgba(45, 212, 191, 0.18);
+  --soft-blue: rgba(59, 130, 246, 0.14);
+  --section-alt: linear-gradient(180deg, #EAF1F8 0%, #F4F7FB 100%);
+  --photo-shadow: 0 20px 40px -12px rgba(18, 36, 58, 0.35);
   --head: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
   --text: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
@@ -20,6 +24,10 @@
   --line: #26404A;
   --signal: #E8B100;
   --button-ink: #0F1E24;
+  --soft-turquoise: rgba(45, 212, 191, 0.22);
+  --soft-blue: rgba(59, 130, 246, 0.20);
+  --section-alt: linear-gradient(180deg, #132830 0%, #0F1E24 100%);
+  --photo-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
 }
 
 * { box-sizing: border-box; }
@@ -31,6 +39,7 @@ body {
   font-family: var(--text);
   font-size: 1.08rem;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 a {
@@ -99,7 +108,38 @@ h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
 }
 
 /* hero */
-.hero { padding: 4.5rem 0 4rem; border-bottom: 1px solid var(--line); }
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top right, var(--soft-turquoise) 0%, transparent 42%),
+    radial-gradient(circle at bottom left, var(--soft-blue) 0%, transparent 46%);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(var(--line) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  opacity: 0.7;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 19rem); gap: 2.5rem 4rem; align-items: center; }
 .foto { margin: 0; position: relative; }
 .foto::before {
@@ -110,7 +150,18 @@ h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
   border-radius: 4px;
   z-index: 0;
 }
-.foto img { position: relative; z-index: 1; display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; background: var(--line); }
+.foto img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--line);
+  box-shadow: var(--photo-shadow);
+}
 .hero h1 { font-size: clamp(2.3rem, 5.6vw, 4.4rem); font-weight: 800; letter-spacing: -.035em; max-width: 15ch; }
 .hero p { max-width: 38rem; margin: 1.75rem 0 0; font-size: 1.2rem; color: var(--ink); }
 .cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; font-family: var(--head); }
@@ -136,6 +187,10 @@ h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
 section { padding: 4rem 0; border-bottom: 1px solid var(--line); }
 section > .wrap > h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .5rem; }
 .lead { color: var(--muted); max-width: 36rem; margin: 0 0 2.5rem; }
+#proyectos,
+#habilidades {
+  background: var(--section-alt);
+}
 
 /* proyectos */
 .proj { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem 3rem; padding: 2rem 0; border-top: 1px solid var(--line); }
@@ -169,7 +224,12 @@ section > .wrap > h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; 
 
 /* habilidades */
 .hab { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; }
-.hab div { background: var(--card); border: 1px solid var(--line); padding: 1.25rem 1.4rem; border-radius: 4px; }
+.hab div {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1.25rem 1.4rem;
+  border-radius: 4px;
+}
 .hab h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: .4rem; }
 .hab p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.55; }
 
