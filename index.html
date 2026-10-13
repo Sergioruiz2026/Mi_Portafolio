@@ -7,6 +7,17 @@
     <meta name="description" content="Portafolio de Sergio Ruiz Espinoza: estudiante de Ingeniería en Informática que desarrolla aplicaciones en Python y JavaScript, con seguridad y pruebas desde el inicio." />
     <meta property="og:title" content="Sergio Ruiz Espinoza – Portafolio" />
     <meta property="og:description" content="Aplicaciones en Python y JavaScript para cuidar a las personas y proteger sus datos." />
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("theme");
+          const theme = storedTheme === "dark" ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
