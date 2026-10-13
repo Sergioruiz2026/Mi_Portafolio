@@ -1,6 +1,6 @@
 export const persona = {
   nombre: "Sergio Ruiz Espinoza",
-  titular: "Programo aplicaciones para cuidar a las personas y proteger sus datos.",
+  titular: "Creo aplicaciones para cuidar a las personas y proteger sus datos.",
   resumen:
     "Soy estudiante de Ingeniería en Informática en INACAP. Antes de programar pasé 13 años liderando tiendas; hoy construyo aplicaciones en Python y JavaScript, con seguridad y pruebas desde el inicio.",
   correo: "sergio.ruiz.espinoza2026@gmail.com",
